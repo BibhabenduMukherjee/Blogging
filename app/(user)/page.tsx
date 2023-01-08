@@ -13,7 +13,8 @@ const query = groq`
   categories[]->
 } | order(_createdAt desc)
 `
-export const revalidate = 30;
+
+export const revalidate = 60
 
 export default  async function page() {
 
@@ -31,7 +32,6 @@ export default  async function page() {
   const posts = await client.fetch(query)
   //console.log(posts)
   return ( 
-      <BlogList posts={posts}/>
-     
+      <BlogList posts={posts}/> 
   )
 }
