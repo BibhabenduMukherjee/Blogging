@@ -1,14 +1,13 @@
 import React from 'react'
-import Header from '../../components/Header'
-import { previewData } from 'next/headers'
+
 import { groq } from 'next-sanity'
-import { client } from '../../lib/sanity.client'
-import ClientSideRoute from '../../components/ClientSideRoute'
+import { client } from '../lib/sanity.client'
+import ClientSideRoute from '../components/ClientSideRoute'
 import Image
  from 'next/image'
- import urlFor from '../../lib/urlFor'
+ import urlFor from '../lib/urlFor'
 import { ArrowUpRightIcon } from '@heroicons/react/24/solid'
-import fette from '../../pages/api/fette'
+
 const query = groq`
 *[_type == 'post']{
   ...,
@@ -17,17 +16,17 @@ const query = groq`
 } | order(_createdAt desc)
 `
 
-// export const revalidate = 20
+ export const revalidate = 20
 
-async function fett() {
-  const res =await fetch("http://localhost:3000/api/fette" , {next : {revalidate:20}})
-  const posts:Post[] = await res.json();
-  return posts
-}
+// async function fett() {
+//   const res =await fetch("http://localhost:3000/api/fette" , {next : {revalidate:20}})
+//   const posts:Post[] = await res.json();
+//   return posts
+// }
 
  async function Homepage() {
 
-  const posts = await fett();
+  const posts = await client.fetch(query);
   //console.log(posts)
   return ( 
     <div>
@@ -67,7 +66,7 @@ async function fett() {
 
            <div className='flex flex-col md:flex-row gap-y-2 md:gap-x-2 items-center'>
                {post.categories.map((categoty:Category) =>(
-                <div className = 'bg-[#F7AB0A] px-3 py-1 rounded-xl text-sm font-semibold  text-black ' >
+                <div key={categoty._id} className = 'bg-[#F7AB0A] px-3 py-1 rounded-xl text-sm font-semibold  text-black ' >
                   <p>{categoty.title}</p>
                  
                 </div>
