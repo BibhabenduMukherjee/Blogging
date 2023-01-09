@@ -8,6 +8,7 @@ import Image
  from 'next/image'
  import urlFor from '../../lib/urlFor'
 import { ArrowUpRightIcon } from '@heroicons/react/24/solid'
+import fette from '../../pages/api/fette'
 const query = groq`
 *[_type == 'post']{
   ...,
@@ -16,11 +17,17 @@ const query = groq`
 } | order(_createdAt desc)
 `
 
-export const revalidate = 10
+// export const revalidate = 20
 
-export default async function Homepage() {
+async function fett() {
+  const res =await fetch("http://localhost:3000/api/fette" , {next : {revalidate:20}})
+  const posts:Post[] = await res.json();
+  return posts
+}
 
-  const posts = await client.fetch(query)
+ async function Homepage() {
+
+  const posts = await fett();
   //console.log(posts)
   return ( 
     <div>
@@ -97,3 +104,4 @@ export default async function Homepage() {
   )
 }
 
+export default Homepage
