@@ -16,7 +16,7 @@ const query = groq`
 } | order(_createdAt desc)
 `
 
- export const revalidate = 20
+ export const revalidate = 120
 
 // async function fett() {
 //   const res =await fetch("http://localhost:3000/api/fette" , {next : {revalidate:20}})

@@ -13,7 +13,7 @@ type Props = {
 
 
 // revalidation 
-export const revalidate = 10
+export const revalidate = 120
 
 export async function generateStaticParams(){
     const query = groq`
