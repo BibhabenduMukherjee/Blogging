@@ -16,6 +16,8 @@ const query = groq`
 } | order(_createdAt desc)
 `
 
+// add two number
+
  export const revalidate = 240
 
 // async function fett() {
