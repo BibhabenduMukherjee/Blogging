@@ -7,6 +7,8 @@ import Image
  from 'next/image'
  import urlFor from '../lib/urlFor'
 import { ArrowUpRightIcon } from '@heroicons/react/24/solid'
+import { unstable_getServerSession } from 'next-auth'
+
 
 const query = groq`
 *[_type == 'post']{
@@ -20,19 +22,20 @@ const query = groq`
 
  export const revalidate = 240
 
-// async function fett() {
-//   const res =await fetch("http://localhost:3000/api/fette" , {next : {revalidate:20}})
-//   const posts:Post[] = await res.json();
-//   return posts
-// }
 
  async function Homepage() {
 
   const posts = await client.fetch(query);
+  
   //console.log(posts)
   return ( 
+
+
+ 
+
     <div>
     <hr className ="border-[#F7AB0A] mb-10" />
+    
     <div className= '  grid grid-cols-1 md:grid-cols-2 px-10 gap-10 gap-y-16 pb-24'>
       {posts.map((post:any)=>(
  
@@ -97,11 +100,12 @@ const query = groq`
 
       ))}
       
-
+       
       
     </div>
     
   </div>
+ 
   )
 }
 

@@ -1,19 +1,40 @@
+import { unstable_getServerSession } from "next-auth"
 import Banner from "../components/Banner"
 import Header from "../components/Header"
+import { authOptions } from "../pages/api/auth/[...nextauth]"
+
 import "../styles/globals.css"
-export default function RootLayout({
+import { Providers } from "./providers"
+
+
+
+
+export default async function RootLayout({
   children,
+  
 }: {
-  children: React.ReactNode
+  children: React.ReactNode,
+  
 }) {
+
+//const user = await unstable_getServerSession(authOptions)
+
   return (
     <html>
    
-   
+      <Providers>
       <body className="max-w-7xl mx-auto">
-      <Header/>
+        
+        <Header  />
       <Banner/>
-        {children}</body>
+     
+     {children}
+     
+      
+    
+     </body>
+      </Providers>
+     
     </html>
   )
 }

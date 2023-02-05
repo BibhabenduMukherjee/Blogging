@@ -1,10 +1,17 @@
 import { groq } from 'next-sanity'
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 import { client } from '../../../lib/sanity.client'
 import urlFor from '../../../lib/urlFor'
-import { PortableText } from '@portabletext/react'
+import {PortableText} from '@portabletext/react'
 import {RichTextComponents} from '../../../components/RichTextComponents'
+
+
+import PostLike from '../../../components/PostLike'
+import { unstable_getServerSession } from 'next-auth'
+import { authOptions } from '../../../pages/api/auth/[...nextauth]'
+
+
 type Props = {
     params : {
         slug : string
@@ -16,6 +23,9 @@ type Props = {
 export const revalidate = 240
 
 export async function generateStaticParams(){
+
+   
+
     const query = groq`
     *[_type == 'post']{
         slug
@@ -29,6 +39,10 @@ export async function generateStaticParams(){
 }
 
  async function page({params : {slug}} : Props) {
+  //  const [like , setLike] = useState()
+
+   
+
     const query = groq`
     *[_type == 'post' && slug.current == $slug][0]{
         ...,
@@ -37,7 +51,7 @@ export async function generateStaticParams(){
     }
     `
     const post:Post = await client.fetch(query , {slug})
-    console.log(post)
+    
   return (
     <article className='px-10 pb-20'>
         <section className='space-y-2 border border-[#F7AB0A] text-white'>
@@ -50,6 +64,8 @@ export async function generateStaticParams(){
                     fill
                     />
                 </div>
+
+                
                 <section className='p-5 bg-[#F7AB0A] w-full'>
                     <div className='flex flex-col md:flex-row justify-between gap-5'>
                         <div>
@@ -97,7 +113,10 @@ export async function generateStaticParams(){
         </section>
       
          
-    <PortableText  value={post.body} components = {RichTextComponents}/>
+    <PortableText  value={post.body}  components = {RichTextComponents}/>
+   <PostLike  post = {post} />
+     
+
     </article>
   )
 }
