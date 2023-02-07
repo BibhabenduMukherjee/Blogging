@@ -8,7 +8,7 @@ import Link from 'next/link'
 
 function Header(user:any) {
   
-  console.log(user)
+  //console.log(user)
 
    return (
   
