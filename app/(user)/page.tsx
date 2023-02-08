@@ -1,11 +1,11 @@
 import React from 'react'
 
 import { groq } from 'next-sanity'
-import { client } from '../lib/sanity.client'
-import ClientSideRoute from '../components/ClientSideRoute'
+import { client } from "../../lib/sanity.client"
+import ClientSideRoute from '../../components/ClientSideRoute'
 import Image
  from 'next/image'
- import urlFor from '../lib/urlFor'
+ import urlFor from '../../lib/urlFor'
 import { ArrowUpRightIcon } from '@heroicons/react/24/solid'
 import { unstable_getServerSession } from 'next-auth'
 

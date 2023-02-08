@@ -1,15 +1,15 @@
 import { groq } from 'next-sanity'
 import Image from 'next/image'
 import React, { useState } from 'react'
-import { client } from '../../../lib/sanity.client'
-import urlFor from '../../../lib/urlFor'
+import { client } from '../../../../lib/sanity.client'
+import urlFor from '../../../../lib/urlFor'
 import {PortableText} from '@portabletext/react'
-import {RichTextComponents} from '../../../components/RichTextComponents'
+import {RichTextComponents} from '../../../../components/RichTextComponents'
 
 
-import PostLike from '../../../components/PostLike'
+import PostLike from '../../../../components/PostLike'
 import { unstable_getServerSession } from 'next-auth'
-import { authOptions } from '../../../pages/api/auth/[...nextauth]'
+import { authOptions } from '../../../../pages/api/auth/[...nextauth]'
 
 
 type Props = {
