@@ -3,11 +3,11 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link' 
+import { useSession } from "next-auth/react"
 
 
-
-function Header(user:any) {
-  
+function Header() {
+  const { data: session, status } = useSession()
   //console.log(user)
 
    return (
@@ -27,10 +27,14 @@ function Header(user:any) {
 
         
 
-         
-         <Link href="/login" className='px-5 py-3 text-sm md:text-base bg-gray-900 text-[#F7AB0A] flex items-center rounded-full text-center'>
+          {
+            status === "authenticated" ?   <Link href="/" className='px-5 py-3 text-sm md:text-base bg-gray-900 text-[#F7AB0A] flex items-center rounded-full text-center'>
+            Join Us
+            </Link>  :   <Link href="/login" className='px-5 py-3 text-sm md:text-base bg-gray-900 text-[#F7AB0A] flex items-center rounded-full text-center'>
         Login
         </Link> 
+          }
+       
         
         
 

@@ -114,7 +114,7 @@ export async function generateStaticParams(){
       
          
     <PortableText  value={post.body}  components = {RichTextComponents}/>
-   {/* <PostLike  post = {post} /> */}
+   <PostLike  post = {post} />
      
 
     </article>
