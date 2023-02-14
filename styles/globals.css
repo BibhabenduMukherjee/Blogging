@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:10px;
+    margin: 10px;
+}
+.page-item{
+    margin: 12px;
+    font-size: 22px;
+    padding: 10px;
+    color:  blue;
+    cursor: pointer;
+}
+.page-item:active{
+    margin: 12px;
+    font-size: 22px;
+    padding: 10px;
+    background-color: blue;
+    
+    cursor: pointer;
+}

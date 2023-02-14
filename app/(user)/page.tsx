@@ -38,7 +38,7 @@ const query = groq`
 
  
 
-    <div>
+    <div className='mt-5'>
      
     <hr className ="border-[#F7AB0A] mb-10" />
     

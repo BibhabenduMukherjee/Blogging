@@ -29,8 +29,10 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-  ],
+, "components/BlogDsList.jsx"  ],
   "exclude": [
     "node_modules"
+    ,
+    
   ]
 }
