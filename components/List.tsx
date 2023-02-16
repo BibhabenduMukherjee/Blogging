@@ -31,7 +31,7 @@ const list = [
   id : "5", 
   title : "Web",
  disable : false,
- ref : "/webdev"
+ ref : "/webdevelopment"
 },
 {
   id : "6", 
@@ -41,16 +41,11 @@ const list = [
 },
 {
   id : "7", 
-  title : "Node js",
+  title : "MERN",
  disable : false,
- ref : "/nodejs"
+ ref : "/mern"
 },
-{
-  id : "8", 
-  title : "React",
- disable : false,
- ref : "/react"
-},
+
 {
   id : "9", 
   title : "Security",

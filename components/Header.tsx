@@ -3,7 +3,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link' 
-import { useSession } from "next-auth/react"
+import { signOut, useSession } from "next-auth/react"
 
 
 function Header() {
@@ -29,7 +29,7 @@ function Header() {
 
           {
             status === "authenticated" ?   <Link href="/" className='px-3 py-3 text-xs md:text-base bg-gray-900 text-[#F7AB0A] flex items-center rounded-full text-center'>
-            <button > Sign Out </button>
+            <button onClick={()=>{signOut()}} > Sign Out </button>
             </Link> :   <Link href="/login" className='px-3 py-3 text-xs md:text-base bg-gray-900 text-[#F7AB0A] flex items-center rounded-full text-center'>
         Login
         </Link> 

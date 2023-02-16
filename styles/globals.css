@@ -2,25 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-.pagination{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding:10px;
-    margin: 10px;
+
+.custom-shape-divider-top-1676474210 {
+   position: relative;
+   top: -100px;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
 }
-.page-item{
-    margin: 12px;
-    font-size: 22px;
-    padding: 10px;
-    color:  blue;
-    cursor: pointer;
-}
-.page-item:active{
-    margin: 12px;
-    font-size: 22px;
-    padding: 10px;
-    background-color: blue;
+
+.custom-shape-divider-top-1676474210 svg {
+    position: relative;
+    display: block;
+    width: calc(194% + 1.3px);
+    height: 300px;
     
-    cursor: pointer;
+    transform: rotateY(180deg);
 }
+
+.custom-shape-divider-top-1676474210 .shape-fill {
+    fill: #FFFFFF;
+}
+
+
+
+
+
+

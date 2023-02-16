@@ -43,11 +43,15 @@ function BlogDsList() {
     
     <div className="">
       {paginatePosts.map((post) => {
-        return <div key={post._id} className='mt-5 pl-8 cursor-pointer hover:bg-gray-200 p-2 flex flex-col shadow-md rounded-md bg-gray-100 '>
-  <p className='  font-serif'>{post._updatedAt}</p>
-  <h2 className='text-3xl pt-2'>{post.title}</h2>
-  <p className='text-lg pt-2 line-clamp-1'>{post.description}</p>
-  <Link href={"/"} className = ' underline mt-5  font-bold flex items-center group-hover:underline'
+        return <div key={post._id} className='  mt-3 pl-5 cursor-pointer hover:bg-gray-200 p-2 flex flex-col shadow-md rounded-md bg-gray-100 '>
+  <p className='  '> {new Date(post._createdAt).toLocaleDateString("en-IN" , {
+                                day : "numeric",
+                                month: "long",
+                                year : "numeric"
+                              })}</p>
+  <h2 className='text-2xl pt-2'>{post.title}</h2>
+  <p className='text-md pt-2 line-clamp-1'>{post.description}</p>
+  <Link href={"/"} className = ' underline mt-3  font-bold flex items-center group-hover:underline'
   >
    Read Post
    <ArrowRightIcon className = 'ml-2 h-4 w-4'/>

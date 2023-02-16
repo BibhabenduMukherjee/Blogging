@@ -29,7 +29,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-, "components/BlogDsList.jsx"  ],
+, "components/BlogDsList.jsx", "components/Hero.jsx"  ],
   "exclude": [
     "node_modules"
     ,
