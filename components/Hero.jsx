@@ -4,6 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import {useState , useEffect} from "react"
 import axios from "axios"
 import "react-toastify/dist/ReactToastify.css";
+import Image from 'next/image';
 var validator = require("email-validator");
 export const Hero = () => {
 
@@ -124,10 +125,13 @@ export const Hero = () => {
       />
   <div className="relative overflow-hidden flex flex-col-reverse px-4 py-16 mx-auto lg:block lg:flex-col lg:py-32 xl:py-48 md:px-8 sm:max-w-xl md:max-w-full">
         <div className="z-0 flex justify-center h-full -mx-10 overflow-hidden lg:pt-24 lg:pb-16 lg:pr-8 xl:pr-0 lg:w-1/2 lg:absolute lg:justify-end lg:bottom-0 lg:left-0 lg:items-center">
-          <img
-            src= {"/122.png"}
+          <Image
+            src= {"/123.webp"}
             className="object-cover object-right w-[400px] h-auto lg:w-auto lg:h-full"
             alt=""
+            width={470}
+            height={400}
+            priority
           />
         </div>
         <div className="relative flex justify-end max-w-2xl mx-auto xl:pr-32 lg:max-w-screen-xl">
@@ -149,7 +153,7 @@ export const Hero = () => {
               <p className="text-base text-gray-700 md:text-lg">
               Embrace the adventure of life and let your 
               ideas be the compass that guides you towards your unique destination.
-              join with us | share you ideas
+              join with us | share your ideas
               </p>
             </div>
             <form className='md:ml-16'>

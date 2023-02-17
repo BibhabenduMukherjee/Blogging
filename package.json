@@ -9,6 +9,7 @@
     "@heroicons/react": "^2.0.13",
     "@portabletext/react": "^2.0.0",
     "@sanity/client": "^4.0.1",
+    "@sanity/code-input": "^4.0.0",
     "@sanity/image-url": "^1.0.1",
     "@sanity/vision": "^3.0.0",
     "@tailwindcss/line-clamp": "^0.4.2",
@@ -34,6 +35,7 @@
     "sanity": "^3.0.0",
     "sanity-plugin-iframe-pane": "^2.0.1",
     "styled-components": "^5.2.0",
+    "sweetalert2": "^11.7.2",
     "tailwind-merge": "^1.8.1",
     "tailwind-scrollbar-hide": "^1.1.7"
   },

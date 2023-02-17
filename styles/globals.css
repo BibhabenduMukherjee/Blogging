@@ -26,6 +26,33 @@
 
 
 
+.custom-shape-divider-top-1676616545 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1676616545 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 0px;
+}
+
+.custom-shape-divider-top-1676616545 .shape-fill {
+    fill: #192eb5;
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+    .custom-shape-divider-top-1676616545 svg {
+        width: calc(115% + 1.3px);
+        height: 154px;
+    }
+}
 
 
 

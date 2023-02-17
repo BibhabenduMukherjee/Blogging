@@ -63,5 +63,13 @@ export default defineType({
       type: 'image',
       options: {hotspot: true},
     }),
+
+    defineArrayMember({
+      type: 'code',
+      name: 'myCodeField',
+            title: 'My code field',
+    }),
+    
+
   ],
 })

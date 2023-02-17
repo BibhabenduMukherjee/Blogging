@@ -11,6 +11,7 @@ import {
     LinkedinShareButton,
     LinkedinIcon,
   } from 'next-share';
+  import Swal from 'sweetalert2'
 import { HeartIcon } from '@heroicons/react/24/solid'
 import {  collection, deleteDoc, doc, getDoc, onSnapshot, setDoc } from 'firebase/firestore'
 import {  useSession } from 'next-auth/react'
@@ -44,7 +45,12 @@ function PostLike({post}:props) {
     
     {
         if(!session){
-            alert("please log in")
+          Swal.fire({
+            icon: 'info',
+            title: 'Please Login',
+            text: 'Your Details is Safe and Encrypted 🔐',
+            footer: '<a href="/login">Go to <b>here</b> for login</a>'
+          })
             return
         } 
 
@@ -78,13 +84,13 @@ function PostLike({post}:props) {
         </button>
         <WhatsappShareButton
         
-        url={'http://localhost:3000'} >
+        url={'https://blogging-ten.verel.app'} >
         <WhatsappIcon size={32} className="mx-4" round />
       </WhatsappShareButton>
   
       <LinkedinShareButton
         
-        url={'http://localhost:3000'} >
+        url={'https://blogging-ten.verel.app'} >
         <LinkedinIcon size={32} round />
       </LinkedinShareButton>
         
