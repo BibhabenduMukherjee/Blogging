@@ -2,11 +2,16 @@
 module.exports = {
 
   reactStrictMode: true,
+  eslint: {
+    
+    ignoreDuringBuilds: true,
+  },
   experimental : {
     appDir : true
   },
+  poweredByHeader: false,
   images : {
-    domains : ["cdn.sanity.io"]
+    domains : ["cdn.sanity.io" , "kitwind.io"]
   },
  
   

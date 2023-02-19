@@ -10,22 +10,18 @@ export default defineType({
       title: 'Title',
       type: 'string',
     }),
-    
+    defineField({
+      name: 'topic',
+      title: 'Topic',
+      type: 'string',
+    }),
     defineField({
       name: 'description',
       title: 'Description',
       type: 'string',
     }),
-    defineField({
-      name : 'likes',
-      title : "Likes",
-      type : "number",
-      
-   
-     
     
-    })
-    ,
+    
     defineField({
       name: 'slug',
       title: 'Slug',

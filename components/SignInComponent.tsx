@@ -38,8 +38,9 @@ function SignInComponent() {
          
       
       <div className='  rounded-lg p-2 ' >
-          <button  className=' bg-slate-600 inline-flex  text-white w-full text-lg items-center justify-center rounded-lg border  px-5 py-3 m-2 text-center  font-medium  hover:bg-slate-100 focus:outline-none focus:ring-4 focus:ring-[#24292F]/50 disabled:opacity-50 hover:text-black dark:hover:bg-[#050708]/30 dark:focus:ring-slate-500' onClick={() => signIn("github" , {
-              callbackUrl : "http://localhost:3000/dashboard"
+          <button  className=' bg-slate-600 inline-flex  text-white w-full text-lg items-center justify-center rounded-lg border  px-5 py-3 m-2 text-center  font-medium  hover:bg-slate-100 focus:outline-none focus:ring-4 focus:ring-[#24292F]/50 disabled:opacity-50 hover:text-black dark:hover:bg-[#050708]/30 dark:focus:ring-slate-500' 
+          onClick={() => signIn("github" , {
+              callbackUrl : "http://localhost:3000"
           })} >Sign in with Github</button>
    {/* <button  className=' bg-slate-600 inline-flex w-full items-center hover:text-black justify-center rounded-lg border  px-5 py-3 m-2 text-center text-xl font-medium text-white hover:bg-slate-100 focus:outline-none focus:ring-4 focus:ring-[#24292F]/50 disabled:opacity-50 dark:hover:bg-[#050708]/30  dark:focus:ring-slate-500' onClick={() => signIn("google" , {
               callbackUrl : "http://localhost:3000/dashboard"

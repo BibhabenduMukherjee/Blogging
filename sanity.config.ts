@@ -5,6 +5,7 @@ import {schemaTypes} from './schemas'
 import { myTheme } from './theme';
 import StudioNavbar from './components/StudioNavbar';
 import Logo from './components/Logo';
+import {codeInput} from '@sanity/code-input'
 import { getDefaultDocumentNode } from './structure';
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!;
@@ -17,7 +18,7 @@ export default defineConfig({
   dataset : dataset,
   plugins: [deskTool(
     {defaultDocumentNode :getDefaultDocumentNode }
-  ), visionTool()],
+  ), visionTool(),codeInput()],
 
   schema: {
     types: schemaTypes,

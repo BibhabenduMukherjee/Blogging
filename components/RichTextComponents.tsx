@@ -42,7 +42,7 @@ export const  RichTextComponents = {
     ),
 
     normal : ({children} : any)=>{
-     return <p className=' text-[22px] md:text-[26px]'>{children}</p>
+     return <p className=' text-[20px] md:text-[26px]'>{children}</p>
     },
    
     blockquote : ({children} : any) => (
