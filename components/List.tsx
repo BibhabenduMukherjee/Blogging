@@ -9,30 +9,20 @@ const list = [
    disable : false,
    ref:"/ds"
 },
-{
-  id : "2", 
-  title : "Algorithms",
- disable : false,
- ref : "/algorithm"
-},
-{
-  id : "3", 
-  title : "Python",
- disable : false,
- ref : "/python"
-},
-{
-  id : "4", 
-  title : "Devops",
- disable : false,
- ref : "/devops"
-},
-{
-  id : "5", 
-  title : "Web",
- disable : false,
- ref : "/webdevelopment"
-},
+
+
+// {
+//   id : "4", 
+//   title : "Core Subject",
+//  disable : false,
+//  ref : "/devops"
+// },
+// {
+//   id : "5", 
+//   title : "Web-Dev",
+//  disable : false,
+//  ref : "/webdevelopment"
+// },
 {
   id : "6", 
   title : "Mechine learning",
@@ -41,7 +31,7 @@ const list = [
 },
 {
   id : "7", 
-  title : "MERN",
+  title : "Full-Stack",
  disable : false,
  ref : "/mern"
 },

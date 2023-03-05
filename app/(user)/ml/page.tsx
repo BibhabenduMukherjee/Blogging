@@ -1,9 +1,27 @@
 import React from 'react'
+import { groq } from 'next-sanity';
 
-function page() {
+import GenericTopicWisePageShower from '../../../components/GenericTopicWisePageShower';
+import { fetcher } from '../../fetcher/mernFetch'
+import Footer from '../../../components/Footer';
+
+const query = groq`
+*[_type == 'post' && topic =='ml']{
+  ...,
+  author->,
+  categories[]->
+  
+} | order(_createdAt desc)
+`
+
+async function page() {
+
+  const post:Post = await fetcher(query);
+  
   return (
-    <div>
-        <h2 className='text-center p-4 text-red-500 text-2xl'>Comming Soon..</h2>
+    <div className='max-w-2xl mx-auto'>
+           <GenericTopicWisePageShower post = {post} resource = {"ml"}  totalPageToShow={2} />
+            <Footer/>
     </div>
   )
 }

@@ -21,10 +21,10 @@ export default async function RootLayout({
 //const user = await unstable_getServerSession(authOptions)
 
   return (
-    <html>
+    <html className="bg-[#1B1713] text-slate-400">
    
       <Providers>
-      <body className="max-w-7xl mx-auto">
+      <body className="max-w-7xl  mx-auto" >
         
         <Header  />
         <List/>

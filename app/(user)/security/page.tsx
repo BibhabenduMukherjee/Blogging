@@ -1,9 +1,23 @@
+import { groq } from 'next-sanity';
 import React from 'react'
+import GenericTopicWisePageShower from '../../../components/GenericTopicWisePageShower';
+import { fetcher } from '../../fetcher/securityFetcher'
 
-function page() {
+const query = groq`
+*[_type == 'post' ]{
+  ...,
+  author->,
+  categories[]->
+} | order(_createdAt desc)
+`
+async function page() {
+  const post:Post = await fetcher(query);
+  
+ 
+ 
   return (
-    <div>
-        <h2 className='text-center p-4 text-red-500 text-2xl'>Comming Soon..</h2>
+    <div className='max-w-2xl mx-auto'>
+       <GenericTopicWisePageShower post = {post} resource = {"security"}  totalPageToShow={2} />
     </div>
   )
 }

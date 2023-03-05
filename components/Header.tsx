@@ -15,10 +15,10 @@ function Header() {
     <header className='flex items-center justify-between space-x-2 font-bold px-6 py-3 md:px-10 md:py-5'>
       <div className='flex items-center space-x-2'>
         <Link href="/">
-            <Image className='rounded-full ' src= "/2.png" alt="logo" width={50} height ={50} />
+            <Image className='rounded-full ' src= "/2-min.png" alt="logo" width={50} height ={50} />
           
         </Link>
-        <h1>Codelify</h1>
+        <h1>Codeordie</h1>
       </div>
 
 
