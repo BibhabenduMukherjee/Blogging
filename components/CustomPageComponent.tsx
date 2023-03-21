@@ -11,7 +11,7 @@ function CustomPageComponent(props: any) {
           <div className="pl-8">
           <p className=" text-cyan-700">
           {" "}
-          {new Date(props.post._createdAt).toLocaleDateString("en-IN", {
+          {new Date(props.post._updatedAt).toLocaleDateString("en-IN", {
             day: "numeric",
             month: "long",
             year: "numeric",

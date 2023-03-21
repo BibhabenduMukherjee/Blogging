@@ -61,7 +61,7 @@ async function page({params : {slug}} : Props) {
                             {post.title}
                             </h1>
                             <p>
-                              {new Date(post._createdAt).toLocaleDateString("en-IN" , {
+                              {new Date(post._updatedAt).toLocaleDateString("en-IN" , {
                                 day : "numeric",
                                 month: "long",
                                 year : "numeric"

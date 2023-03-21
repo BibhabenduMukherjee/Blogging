@@ -77,7 +77,7 @@ const query = groq`
           <div>
             <p className='font-bold'>{post.title}</p>
             <p className=''>{
-              new Date(post._createdAt).toLocaleDateString(
+              new Date(post._updatedAt).toLocaleDateString(
                 "en-IN",{
                   day : "numeric",
                   month : "long",
