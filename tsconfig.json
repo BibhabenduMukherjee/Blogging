@@ -29,7 +29,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-, "components/BlogDsList.jsx", "components/Hero.jsx"  ],
+, "components/BlogDsList.jsx", "components/Hero.jsx", "components/GenericTopicWisePageShower.jsx", "app/(user)/mern/[slug].txs"  ],
   "exclude": [
     "node_modules"
     ,

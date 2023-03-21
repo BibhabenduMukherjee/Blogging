@@ -124,12 +124,12 @@ export const Hero = () => {
         pauseOnHover
       />
   <div className="relative overflow-hidden flex flex-col-reverse px-4 py-16 mx-auto lg:block lg:flex-col lg:py-32 xl:py-48 md:px-8 sm:max-w-xl md:max-w-full">
-        <div className="z-0 flex justify-center h-full -mx-10 overflow-hidden lg:pt-24 lg:pb-16 lg:pr-8 xl:pr-0 lg:w-1/2 lg:absolute lg:justify-end lg:bottom-0 lg:left-0 lg:items-center">
+        <div className="z-0 flex justify-center h-full -mx-[54px] overflow-hidden lg:pt-24 lg:pb-16 lg:pr-8 xl:pr-0 lg:w-1/2 lg:absolute lg:justify-end lg:bottom-0 lg:left-0 lg:items-center">
           <Image
             src= {"/123.webp"}
-            className="object-cover object-right w-[400px] h-auto lg:w-auto lg:h-full"
+            className=" bg-slate-50 object-cover object-right  h-auto lg:w-auto lg:h-full"
             alt=""
-            width={470}
+            width={490}
             height={400}
             priority
           />
@@ -138,11 +138,11 @@ export const Hero = () => {
           <div className="mb-16  lg:pr-5 lg:max-w-lg lg:mb-0">
             <div className="max-w-xl mb-6 md:ml-16 ">
               <div>
-                <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
-                  Codelify@team
+                <p className="inline-block px-1 py-px mb-4 text-xs font-semibold tracking-wide text-yellow-300 uppercase rounded-full bg-teal-accent-400">
+                Codeordie@team
                 </p>
               </div>
-              <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+              <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-[#B8D0D1] sm:text-4xl sm:leading-none">
                 Let's  bring your 
                 <br className="hidden md:block" />
                 Thoughts{' '}
@@ -150,7 +150,7 @@ export const Hero = () => {
                   online
                 </span>
               </h2>
-              <p className="text-base text-gray-700 md:text-lg">
+              <p className="text-base text-green-700 md:text-lg">
               Embrace the adventure of life and let your 
               ideas be the compass that guides you towards your unique destination.
               join with us | share your ideas
@@ -171,7 +171,7 @@ export const Hero = () => {
                   }}
                   value={name}
                   onChange = {(e)=>{setName(e.target.value) ; setFlg(false) ; setFlgMail(false) ; setNameLen(false)}}
-                  className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none md:mr-2 focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
+                  className="flex-grow  text-black w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none md:mr-2 focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
                 />
                 <input
                   placeholder="Email"
@@ -183,7 +183,7 @@ export const Hero = () => {
                   type="text"
                   value={email}
                   onChange = {(e)=>{setEmail(e.target.value);  setFlg(false) ; setFlgMail(false) ; setNameLen(false)}}
-                  className="flex-grow w-full h-12 px-4 mb-3 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none md:mb-0 focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
+                  className="flex-grow w-full h-12 px-4 mb-3 transition duration-200 text-black bg-white border border-gray-300 rounded shadow-sm appearance-none md:mb-0 focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
                 />
               </div>
               <div className="flex items-center mt-4 space-x-3">

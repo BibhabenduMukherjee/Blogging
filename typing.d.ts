@@ -8,9 +8,18 @@ type Base = {
     _type : string;
     _updatedAt : string
 }
+
+interface Code {
+   
+    code : string,
+    filename : string
+}
+
 interface Post extends Base{
     author : Author;
     body : Block[];
+    image : string
+    myCodeField:Code
     categories : Category[];
     mainImage : Image;
     slug : string;

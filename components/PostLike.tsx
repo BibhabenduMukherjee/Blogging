@@ -77,10 +77,10 @@ function PostLike({post}:props) {
         md:mt-14 ' />
 
         <div className=' flex flex-row justify-start px-2 text-center  mt-8   mx-auto'>
-        <h2 className=' mt-6 font-serif text-start font-semibold text-lg text-black'>Small step to appriciate</h2>
+        <h2 className=' mt-5 font-serif text-start font-semibold text-lg text-white'>Small step to appriciate</h2>
 
         <button onClick = {handleLike} className=' justify-evenly items-center inline-flex text-black p-4 font-bold w-[120px] rounded-l'>
-          {hasLiked ? <HeartIcon className=' text-red-500 h-10 w-10'/>  : <HeartIcon className=' text-gray-400 h-10 w-10'/>  } <span className=''>{likesCount.length}</span>
+          {hasLiked ? <HeartIcon className=' text-red-500 h-10 w-10'/>  : <HeartIcon className=' text-gray-400 h-10 w-10'/>  } <span className='text-white'>{likesCount.length}</span>
         </button>
         <WhatsappShareButton
         

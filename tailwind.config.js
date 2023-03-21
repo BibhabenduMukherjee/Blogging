@@ -5,9 +5,14 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
     './app/**/*.{js,ts,jsx,tsx}',
   ],
+  darkMode : "class"
+,
+
   theme: {
     extend: {},
+   
   },
+
   plugins: [
     require('@tailwindcss/line-clamp'),
     require('tailwind-scrollbar-hide')

@@ -56,6 +56,7 @@ export default defineType({
       title: 'Published at',
       type: 'datetime',
     }),
+   
     defineField({
       name: 'body',
       title: 'Body',
