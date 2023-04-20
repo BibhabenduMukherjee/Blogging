@@ -128,11 +128,7 @@ const query = groq`
       
     </div>
 
-    <section className='flex flex-col  bg-blue-300 w-full h-[500px]'>
-    <div className='p-4 text-black'>
-     <Link href={"/crashcourse"} className = 'bg-orange-500 text-'>Go now</Link>
-    </div>
-    </section>
+    
 
     <div className="  relative bg-[##201a15] custom-shape-divider-bottom-1676617131">
       {/* <div className=' overflow-hidden w-10 h-10 absolute top-1 -left-7 rounded-lg bg-yellow-400 animate-spin'></div> */}

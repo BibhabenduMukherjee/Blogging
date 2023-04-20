@@ -13,12 +13,17 @@
 
 .box{
     display: flex;
+    
     justify-content: center;
     align-items: center;
+    width: 700px;
+    position: relative;
+    
 }
 .box h2{
-    font-size: 5rem;
+    font-size: 4.4rem;
     color:#fff;
+
     font-weight: 600;
     letter-spacing: 0.1rem;
     text-shadow: 0 0 10px #00b3ff;
@@ -29,3 +34,99 @@
                  0 0 120px #00b3ff
 
 }
+
+
+.lightbar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 7px;
+    height: 80%;
+    border-radius: 10px;
+    background: #fff;
+    z-index: 2;
+    box-shadow: 0 0 10px #00b3ff,
+                 0 0 20px #00b3ff,
+                 0 0 40px #00b3ff,
+                 0 0 80px #00b3ff,
+                 0 0 120px #00b3ff;
+    animation : animatelightbar 2s linear infinite;
+
+
+}
+
+.topLayer{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 700px;
+    height: 80%;
+   background-color: #1B1713;
+    animation: animatetoplayer 4s linear infinite;
+
+}
+
+
+@keyframes  animatetoplayer{
+    0%,2.5%
+    {
+        transform:  translateX(0);
+    }
+    5%
+    {
+        transform: translateX(0);
+    }
+    45%
+    {
+        transform:translateX(700px);
+    }
+    47.5%,50%
+    {
+        transform: translateX(700px);
+    }
+
+    50.001%,52.5%
+    {
+        transform:  translateX(-700px);
+    }
+    55%
+    {
+        transform: translateX(-700px);
+    }
+    95%
+    {
+        transform:translateX(0px);
+    }
+    97.5%,100%
+    {
+        transform: translateX(0px);
+    }
+
+
+}
+
+@keyframes animatelightbar {
+    0%,5%
+    {
+        transform: scaleY(0) translateX(0);
+    }
+    10%
+    {
+        transform: scaleY(1) translateX(0);
+    }
+    90%
+    {
+        transform: scaleY(1) translateX(700px);
+    }
+    95%,100%
+    {
+        transform: scaleY(0) translateX(700px);
+    }
+}
+
+@media  only screen and (max-width:400px){
+    .box h2{
+        font-size: 34px;
+    }
+}
+
