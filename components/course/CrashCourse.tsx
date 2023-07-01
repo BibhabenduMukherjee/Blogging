@@ -1,6 +1,8 @@
 "use client"
-import React  , {FC}from 'react'
+import React  , {FC, useEffect}from 'react'
 import {urlForSecurityCms} from '../../lib/urlFor'
+import Link from 'next/link'
+import {useState} from "react"
 const products = [
   {
     imageSrc : "https://images.unsplash.com/photo-1678314530817-68b4966f1b07?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2671&q=80",
@@ -39,13 +41,13 @@ const products = [
 interface Content{}
 
 interface crashCourseT{
- content : Content[],
+ content : Content[] | null,
  title : string,
  _id:string,
  _type : string,
  _updatedAt : string,
  mainImage : MainImage
- alt : string | ""
+ 
 
 }
 
@@ -66,29 +68,42 @@ interface MainImage{
 
  };
   const CrashCourse : FC<PageProps> =  ({crashCourse}) =>  {
-    console.log(crashCourse)
+    const aa = crashCourse.slice(0,3)
+    const [initialCrashCourse , setInitialCrashCourse ] = useState<crashCourseT[]>(aa);
+    function clickHandle(){
+      let len = crashCourse.length;
+      let prevLen = initialCrashCourse.length
+      const newRecords = crashCourse.slice(0, Math.max((prevLen + 3),len))
+      setInitialCrashCourse(newRecords)
+    }
+    console.log(initialCrashCourse)
     try{}catch(e){}
     return (
-        <div className="bg-slate-800">
-          <div className="mx-auto max-w-xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-            <h2 className="text-2xl font-bold tracking-tight text-gray-900">Customers also purchased</h2>
+        <div className="mb-[20px]">
+          <div className="mx-auto max-w-xl px-4  sm:px-6  lg:max-w-7xl lg:px-8">
+            <h2 className="text-xl  text-center font-mono font-bold md:text-3xl text-fuchsia-500">Explore The Best Design <span className="md:text-3xl text-orange-500">CrashCourse</span></h2>
+            <hr className="w-[200px] pb-[30px] mx-auto md:w-[570px] lg:w-[650px] mb-[30px]   mt-2 h-[8px]"/>
     
             <div className="mt-6 grid grid-cols-1 gap-x-4 gap-y-10  lg:grid-cols-3 xl:gap-x-8">
-              {crashCourse.map((c) => (
+              {initialCrashCourse.map((c) => (
                 <div key={c._id} className="group relative">
-                  <div className="aspect-h-1 aspect-w-1 w-full h-[300px] overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-[300px] ">
+
+                  <Link href={"/"}>
+                  <div className="aspect-h-1 aspect-w-1 w-full h-[380px] overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-[300px] ">
                      {/* 337*336 */}
                     <img
                       src={urlForSecurityCms(c.mainImage).url()}
-                      alt={c.alt}
+                      alt={""}
                       className="h-full w-full object-fill object-center lg:h-full lg:w-full"
                     />
                   </div>
+                  </Link>
+                  
                   <div className="mt-4 flex justify-between">
                     <div>
-                      <h3 className="text-sm text-gray-700">
+                      <h3 className="text-xl opacity-60 text-white">
                         <a href={""}>
-                          <span aria-hidden="true" className="absolute inset-0" />
+                          <span aria-hidden="true" className="" />
                           {c.title}
                         </a>
                       </h3>
@@ -98,7 +113,15 @@ interface MainImage{
                   </div>
                 </div>
               ))}
-            </div>
+             
+            </div> 
+           <div className=' max-w-4xl mt-[30px] p-2 flex items-center mx-auto'>
+            
+          {
+            initialCrashCourse.length !== crashCourse.length ?  <button onClick={()=>{clickHandle()}} className=" hover:bg-yellow-500  mx-auto w-[150px] h-[50px] bg-yellow-400 p-3 text-black font-semibold text-lg rounded-lg">Load more</button> : ""
+          }
+           </div>
+           
           </div>
         </div>
       )

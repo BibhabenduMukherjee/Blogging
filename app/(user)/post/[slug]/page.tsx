@@ -2,7 +2,7 @@ import { groq } from 'next-sanity'
 import Image from 'next/image'
 import React, { useState } from 'react'
 import { client } from '../../../../lib/sanity.client'
-import urlFor from '../../../../lib/urlFor'
+import {urlFor} from '../../../../lib/urlFor'
 import {PortableText} from '@portabletext/react'
 import {RichTextComponents} from '../../../../components/RichTextComponents'
 

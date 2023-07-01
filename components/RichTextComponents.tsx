@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from "next/image"
-import urlFor from '../lib/urlFor'
+import {urlFor} from '../lib/urlFor'
 import Link from 'next/link'
 import Code from "../components/Code"
 export const  RichTextComponents = {
