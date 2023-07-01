@@ -27,9 +27,8 @@ export default async function RootLayout({
    
       <Providers>
       <body className="max-w-7xl  mx-auto" >
-        
-        <Header  />
-        <List/>
+      <Header  />
+       <List/>
       <Banner/>
      
      {children}

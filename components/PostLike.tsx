@@ -1,11 +1,6 @@
 "use client"
 import {
-    FacebookShareButton,
-    FacebookIcon,
-    PinterestShareButton,
-    PinterestIcon,
-    RedditShareButton,
-    RedditIcon,
+   
     WhatsappShareButton,
     WhatsappIcon,
     LinkedinShareButton,
@@ -13,7 +8,7 @@ import {
   } from 'next-share';
   import Swal from 'sweetalert2'
 import { HeartIcon } from '@heroicons/react/24/solid'
-import {  collection, deleteDoc, doc, getDoc, onSnapshot, setDoc } from 'firebase/firestore'
+import {  collection, deleteDoc, doc, onSnapshot, setDoc } from 'firebase/firestore'
 import {  useSession } from 'next-auth/react'
 import React, { useEffect, useState } from 'react'
 import { db } from '../dbsource/client'
@@ -29,7 +24,7 @@ function PostLike({post}:props) {
     const user = JSON.stringify( session?.user?.email)
     useEffect(()=>{
         onSnapshot(collection(db , 'posts' , idd , 'likes' ), (snapshot ) => {
-            const a = snapshot.docs.length
+           // const a = snapshot.docs.length
            
             setLikesCount(snapshot.docs)})
     } , [db,idd])

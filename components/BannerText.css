@@ -128,5 +128,8 @@
     .box h2{
         font-size: 34px;
     }
+    .topbar {
+        width: 300px
+    }
 }
 
